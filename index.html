@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenIQ - Smart Agriculture Solutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2E7D32;
+            --accent-color: #8BC34A;
+            --text-color: #212121;
+            --light-color: #F1F8E9;
+
+            --primary-green: #2e7d32;
+            --light-green: #81c784;
+            --dark-green: #1b5e20;
+            --cream: #f5f5f5;
+            --soil-brown: #5d4037;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar {
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline-light {
+            border-radius: 30px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-btn {
+            margin: 0 10px;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .features-section {
+            padding: 80px 0;
+            background-color: var(--cream);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            height: 100%;
+            border-top: 5px solid var(--primary-green);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+
+        .architecture-section {
+            background-color: var(--light-color);
+        }
+
+        .architecture-img {
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .architecture-img:hover {
+            transform: scale(1.03);
+        }
+
+        .footer {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">
+                Green<span class="text-warning">IQ</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#architecture">Architecture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container text-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="display-3 fw-bold mb-4">Revolutionizing Agriculture with <span
+                        class="text-warning">GreenIQ</span></h1>
+                <p class="lead mb-5">Smart solutions for modern farming. Increase yield, reduce resource consumption,
+                    and make data-driven decisions with our cutting-edge agricultural technology.</p>
+                <div class="d-flex justify-content-center flex-wrap">
+                    <a href="#" class="btn btn-primary download-btn mb-3 mb-md-0">
+                        <i class="bi bi-file-earmark-slides me-2"></i>Our Idea PPT
+                    </a>
+                    <a href="#" class="btn btn-outline-light download-btn">
+                        <i class="bi bi-android2 me-2"></i>Download APK
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Key Features</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Crop Monitoring</h3>
+                        <p>Real-time monitoring of crop health using advanced computer vision and sensor data to detect
+                            diseases early.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Smart Irrigation</h3>
+                        <p>Automated irrigation control based on soil moisture levels and weather forecasts to optimize
+                            water usage.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h3>Weather Integration</h3>
+                        <p>Hyper-local weather predictions and alerts to help you plan farming activities and protect
+                            your crops.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Yield Prediction</h3>
+                        <p>AI-powered yield forecasting based on historical data and current growing conditions for
+                            better planning.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <h3>Pest Detection</h3>
+                        <p>Early detection of pests and diseases using image recognition with recommendations for
+                            treatment.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Automated Alerts</h3>
+                        <p>Instant notifications for critical conditions like frost, drought, or equipment malfunctions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="py-5 py-lg-8 architecture-section" id="architecture">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">System Architecture</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <img src="https://picsum.photos/600/400" alt="GreenIQ System Architecture"
+                        class="img-fluid architecture-img w-100">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="mb-4">How GreenIQ Works</h3>
+                    <p class="mb-4">Our system utilizes a network of IoT sensors, cloud computing, and mobile technology
+                        to create a comprehensive farm management solution.</p>
+                    <div class="d-flex mb-3">
+                        <div class="me-3 text-primary">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Data Collection</h5>
+                            <p>Sensors collect real-time data on soil conditions, plant health, and environmental
+                                factors.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3 text-primary">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+                        <div>
+                            <h5>AI Processing</h5>
+                            <p>Our AI engines process the data to generate insights and recommendations.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3 text-primary">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+                        <div>
+                            <h5>Automated Actions</h5>
+                            <p>The system can automatically adjust irrigation, fertilization, and other systems based on
+                                the collected data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://picsum.photos/400/300" alt="GreenIQ Architecture Detail 1"
+                        class="img-fluid architecture-img w-100">
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://picsum.photos/400/300" alt="GreenIQ Architecture Detail 2"
+                        class="img-fluid architecture-img w-100">
+                </div>
+                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://picsum.photos/400/300" alt="GreenIQ Architecture Detail 3"
+                        class="img-fluid architecture-img w-100">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 py-lg-8 bg-primary text-white">
+        <div class="container text-center" data-aos="fade-up">
+            <h2 class="mb-4">Ready to Transform Your Farm?</h2>
+            <p class="lead mb-4">Start using GreenIQ today and experience the future of agriculture.</p>
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="#" class="btn btn-light download-btn mb-3 mb-md-0">
+                    <i class="bi bi-file-earmark-slides me-2"></i>View Presentation
+                </a>
+                <a href="#" class="btn btn-outline-light download-btn">
+                    <i class="bi bi-android2 me-2"></i>Download App
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5 py-lg-8" id="contact">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="bg-light p-4 h-100 rounded">
+                        <h4 class="mb-4">Contact Information</h4>
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <div>
+                                <h5>Address</h5>
+                                <p>123 Agritech Valley, Green City, 10001</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>info@greeniq.tech</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div>
+                                <h5>Phone</h5>
+                                <p>+1 (123) 456-7890</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="mb-4">Green<span class="text-warning">IQ</span></h3>
+                    <p>Empowering farmers with smart technology to grow more with less, sustainably.</p>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#features" class="text-white text-decoration-none">Features</a></li>
+                        <li class="mb-2"><a href="#architecture"
+                                class="text-white text-decoration-none">Architecture</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <h5 class="mb-4">Follow Us</h5>
+                    <div class="d-flex">
+                        <a href="#" class="social-icon">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-4 mt-4 border-top border-light">
+                <p class="mb-0">&copy; 2025 GreenIQ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- AOS Animation JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
