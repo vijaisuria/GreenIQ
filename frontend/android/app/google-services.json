@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "799885511523",
+    "project_id": "greenguardai-45879",
+    "storage_bucket": "greenguardai-45879.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799885511523:android:9afb0b34a5ae8f14f8e156",
+        "android_client_info": {
+          "package_name": "com.example.chanakya"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5LAJ_hGktcYRNFsp3DGXU-u2F0cF3MvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
