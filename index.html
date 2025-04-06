@@ -124,7 +124,6 @@
             margin-bottom: 20px;
         }
 
-
         .architecture-section {
             background-color: var(--light-color);
         }
@@ -159,6 +158,53 @@
         .social-icon:hover {
             background-color: var(--accent-color);
             transform: translateY(-3px);
+        }
+
+        .team-photo {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border: 2px solid #fff;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .team-photo {
+            transform: scale(1.1);
+        }
+
+        .team-name {
+            color: #fff;
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .image-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 4 / 3;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            /* center in column */
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .image-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
     </style>
 </head>
@@ -201,10 +247,11 @@
                 <p class="lead mb-5">Smart solutions for modern farming. Increase yield, reduce resource consumption,
                     and make data-driven decisions with our cutting-edge agricultural technology.</p>
                 <div class="d-flex justify-content-center flex-wrap">
-                    <a href="#" class="btn btn-primary download-btn mb-3 mb-md-0">
+                    <a href="./assets/pdfs/GreenIQ _ Project Submission.pdf"
+                        class="btn btn-primary download-btn mb-3 mb-md-0">
                         <i class="bi bi-file-earmark-slides me-2"></i>Our Idea PPT
                     </a>
-                    <a href="#" class="btn btn-outline-light download-btn">
+                    <a href="./assets/apks/GreenIQ-App.apk" class="btn btn-outline-light download-btn">
                         <i class="bi bi-android2 me-2"></i>Download APK
                     </a>
                 </div>
@@ -217,71 +264,102 @@
         <div class="container">
             <h2 class="text-center section-title" data-aos="fade-up">Key Features</h2>
             <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-seedling"></i>
                         </div>
-                        <h3>Crop Monitoring</h3>
-                        <p>Real-time monitoring of crop health using advanced computer vision and sensor data to detect
-                            diseases early.</p>
+                        <h3>Crop Recommendation</h3>
+                        <p>AI-based crop suggestions considering crop rotation, soil health, and real-time climate data.
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-tint"></i>
+                            <i class="fas fa-vial"></i>
                         </div>
-                        <h3>Smart Irrigation</h3>
-                        <p>Automated irrigation control based on soil moisture levels and weather forecasts to optimize
-                            water usage.</p>
+                        <h3>Fertilizer Guidance</h3>
+                        <p>Smart recommendations for fertilizer type, quantity, schedule, and pricing updates.</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-cloud-sun"></i>
-                        </div>
-                        <h3>Weather Integration</h3>
-                        <p>Hyper-local weather predictions and alerts to help you plan farming activities and protect
-                            your crops.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Yield Prediction</h3>
-                        <p>AI-powered yield forecasting based on historical data and current growing conditions for
-                            better planning.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-bug"></i>
                         </div>
-                        <h3>Pest Detection</h3>
-                        <p>Early detection of pests and diseases using image recognition with recommendations for
-                            treatment.</p>
+                        <h3>Pest & Disease Detection</h3>
+                        <p>Detect plant diseases from images using TensorFlow-powered models with treatment suggestions.
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-microphone"></i>
                         </div>
-                        <h3>Automated Alerts</h3>
-                        <p>Instant notifications for critical conditions like frost, drought, or equipment malfunctions.
+                        <h3>Multilingual Voice Chatbot</h3>
+                        <p>Gemini-powered chatbot supporting voice and text queries in multiple local languages.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Visual insights on crop growth, irrigation, soil status, and weather trends using BigQuery.
                         </p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Live Agri Data</h3>
+                        <p>Automated scraping and integration of real-time water levels, fertilizer prices, and market
+                            rates.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3>Instant Notifications</h3>
+                        <p>Real-time alerts on critical events like weather changes, pest outbreaks, or crop actions via
+                            FCM.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Secure Access</h3>
+                        <p>Google Sign-In with email verification ensures data privacy and authenticated access.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="900">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3>History Storage</h3>
+                        <p>All image uploads and chatbot interactions are stored securely in GCS and Firestore for
+                            future
+                            reference.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Architecture Section -->
     <section class="py-5 py-lg-8 architecture-section" id="architecture">
@@ -289,58 +367,82 @@
             <h2 class="text-center section-title" data-aos="fade-up">System Architecture</h2>
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <img src="https://picsum.photos/600/400" alt="GreenIQ System Architecture"
+                    <img src="./assets/images/features.png" alt="GreenIQ System Architecture"
                         class="img-fluid architecture-img w-100">
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <h3 class="mb-4">How GreenIQ Works</h3>
-                    <p class="mb-4">Our system utilizes a network of IoT sensors, cloud computing, and mobile technology
-                        to create a comprehensive farm management solution.</p>
-                    <div class="d-flex mb-3">
+                    <h3 class="mb-4">Key Modules of GreenIQ</h3>
+
+                    <div class="d-flex mb-1">
                         <div class="me-3 text-primary">
                             <i class="bi bi-check-circle-fill"></i>
                         </div>
                         <div>
-                            <h5>Data Collection</h5>
-                            <p>Sensors collect real-time data on soil conditions, plant health, and environmental
-                                factors.</p>
+                            <h5>🔧 Recommendation System</h5>
+                            <p>GCP-hosted TensorFlow models suggest optimal crops and fertilizers based on soil, crop
+                                rotation, and
+                                climate data—along with pricing and quantity from verified sources.</p>
                         </div>
                     </div>
-                    <div class="d-flex mb-3">
+
+                    <div class="d-flex mb-1">
                         <div class="me-3 text-primary">
                             <i class="bi bi-check-circle-fill"></i>
                         </div>
                         <div>
-                            <h5>AI Processing</h5>
-                            <p>Our AI engines process the data to generate insights and recommendations.</p>
+                            <h5>🦠 Detection System</h5>
+                            <p>Farmers upload plant images for instant disease diagnosis and treatment using TensorFlow
+                                models on GCP.
+                            </p>
                         </div>
                     </div>
+
+                    <div class="d-flex mb-1">
+                        <div class="me-3 text-primary">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+                        <div>
+                            <h5>📊 Analytics Dashboard</h5>
+                            <p>BigQuery aggregates climate, soil, and market data to power a visual dashboard for smart
+                                planning.</p>
+                        </div>
+                    </div>
+
                     <div class="d-flex">
                         <div class="me-3 text-primary">
                             <i class="bi bi-check-circle-fill"></i>
                         </div>
                         <div>
-                            <h5>Automated Actions</h5>
-                            <p>The system can automatically adjust irrigation, fertilization, and other systems based on
-                                the collected data.</p>
+                            <h5>🗣️ Multilingual Voice Chatbot</h5>
+                            <p>Gemini-powered chatbot offers voice/text support in local languages, storing chats and
+                                alerts in Firebase
+                                Firestore.</p>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="row mt-5">
                 <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://picsum.photos/400/300" alt="GreenIQ Architecture Detail 1"
-                        class="img-fluid architecture-img w-100">
+                    <div class="image-wrapper">
+                        <img src="./assets/images/Analytics-GreenIQ Architecture.png"
+                            alt="GreenIQ Architecture Detail 1" class="img-fluid">
+                    </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://picsum.photos/400/300" alt="GreenIQ Architecture Detail 2"
-                        class="img-fluid architecture-img w-100">
+                    <div class="image-wrapper">
+                        <img src="./assets/images/GAI-GreenIQ Architecture.png" alt="GreenIQ Architecture Detail 2"
+                            class="img-fluid">
+                    </div>
                 </div>
                 <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://picsum.photos/400/300" alt="GreenIQ Architecture Detail 3"
-                        class="img-fluid architecture-img w-100">
+                    <div class="image-wrapper">
+                        <img src="./assets/images/Pest_Plant_Disease_Detection.png" alt="GreenIQ Architecture Detail 3"
+                            class="img-fluid">
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -349,16 +451,24 @@
         <div class="container text-center" data-aos="fade-up">
             <h2 class="mb-4">Ready to Transform Your Farm?</h2>
             <p class="lead mb-4">Start using GreenIQ today and experience the future of agriculture.</p>
-            <div class="d-flex justify-content-center flex-wrap">
-                <a href="#" class="btn btn-light download-btn mb-3 mb-md-0">
+            <div class="d-flex justify-content-center flex-wrap mb-4">
+                <a href="./assets/pdfs/GreenIQ _ Project Submission.pdf" class="btn btn-light download-btn mb-3 mb-md-0">
                     <i class="bi bi-file-earmark-slides me-2"></i>View Presentation
                 </a>
-                <a href="#" class="btn btn-outline-light download-btn">
+                <a href="./assets/apks/GreenIQ-App.apk" class="btn btn-outline-light download-btn">
                     <i class="bi bi-android2 me-2"></i>Download App
                 </a>
             </div>
+
+            <!-- Google Drive Embedded Video -->
+            <div class="ratio ratio-16x9 mt-4">
+                <iframe src="https://drive.google.com/file/d/1wRRMFoNhURYqsxIxwvqrLppy-KRXBimi/preview" allow="autoplay"
+                    allowfullscreen style="width: 100%; height: 100%; border: none;">
+                </iframe>
+            </div>
         </div>
     </section>
+
 
     <!-- Contact Section -->
     <section class="py-5 py-lg-8" id="contact">
@@ -387,11 +497,20 @@
                         <h4 class="mb-4">Contact Information</h4>
                         <div class="d-flex mb-3">
                             <div class="me-3 text-primary">
+                                <i class="bi bi-people-fill"></i>
+                            </div>
+                            <div>
+                                <h5>Team</h5>
+                                <p>AIgnite</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
                                 <i class="bi bi-geo-alt-fill"></i>
                             </div>
                             <div>
                                 <h5>Address</h5>
-                                <p>123 Agritech Valley, Green City, 10001</p>
+                                <p>Madras Institute of Technology, Anna University, Chennai 600044</p>
                             </div>
                         </div>
                         <div class="d-flex mb-3">
@@ -400,16 +519,7 @@
                             </div>
                             <div>
                                 <h5>Email</h5>
-                                <p>info@greeniq.tech</p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="me-3 text-primary">
-                                <i class="bi bi-telephone-fill"></i>
-                            </div>
-                            <div>
-                                <h5>Phone</h5>
-                                <p>+1 (123) 456-7890</p>
+                                <p>vijaisuria87@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -437,22 +547,28 @@
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <h5 class="mb-4">Follow Us</h5>
-                    <div class="d-flex">
-                        <a href="#" class="social-icon">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
+                    <h5 class="mb-4">Team</h5>
+                    <div class="d-flex flex-wrap gap-3">
+                        <div class="team-member text-center">
+                            <img src="./assets/images/team/vijai.png" alt="Member 1" class="rounded-circle team-photo">
+                            <p class="mt-2 mb-0 team-name">Vijai Suria M</p>
+                        </div>
+                        <div class="team-member text-center">
+                            <img src="./assets/images/team/siva.JPG" alt="Member 2" class="rounded-circle team-photo">
+                            <p class="mt-2 mb-0 team-name">Siva Jegadeesh C B</p>
+                        </div>
+                        <div class="team-member text-center">
+                            <img src="./assets/images/team/barani.JPG" alt="Member 3" class="rounded-circle team-photo">
+                            <p class="mt-2 mb-0 team-name">Baranidharan</p>
+                        </div>
+                        <div class="team-member text-center">
+                            <img src="./assets/images/team/logarathan.jpeg" alt="Member 4"
+                                class="rounded-circle team-photo">
+                            <p class="mt-2 mb-0 team-name">Aditi Sharma</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
             <div class="text-center pt-4 mt-4 border-top border-light">
                 <p class="mb-0">&copy; 2025 GreenIQ. All rights reserved.</p>
