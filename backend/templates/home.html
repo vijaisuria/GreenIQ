@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h2>Welcome to Flask Google OAuth</h2>
+    {% if user %}
+        <p>Hello, {{ user.name }}!</p>
+        <img src="{{ user.picture }}" width="100">
+        <p>Email: {{ user.email }}</p>
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+    {% else %}
+        <a href="{{ url_for('auth.login') }}">Login with Google</a>
+    {% endif %}
+</body>
+</html>

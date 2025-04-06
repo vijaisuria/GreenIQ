@@ -1,0 +1,12 @@
+# User credentials and secrets
+config/*.json
+
+*.env
+
+# Python cache
+__pycache__/
+
+# Sample output
+output.mp3
+
+.DS_Store

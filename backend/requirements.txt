@@ -1,0 +1,8 @@
+flask
+Authlib
+requests
+firebase-admin
+pyrebase4
+flask_cors
+google-cloud-texttospeech
+google-cloud-speech
