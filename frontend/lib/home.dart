@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         name = user.displayName ?? 'Guest';
         email = user.email ?? 'No email';
-        phoneNumber = user.phoneNumber! ;
+        phoneNumber = user.phoneNumber ?? '+91 6378765620';
       });
     }
   }
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const SizedBox(height: 16.0),
                   Text(
-                    'Phone Number: ${phoneNumber ?? '+91 6378765620'}',
+                    (phoneNumber.isNotEmpty) ? 'Phone Number: ${phoneNumber}' : 'Phone Number: +91 6378765620',
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Colors
