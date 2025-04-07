@@ -41,48 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyA9tjY3CTill6NPO3rDr5JGnx41up2oI88',
-    appId: '1:799885511523:web:0ac965e4196d954df8e156',
-    messagingSenderId: '799885511523',
-    projectId: 'greenguardai-45879',
-    authDomain: 'greenguardai-45879.firebaseapp.com',
-    storageBucket: 'greenguardai-45879.firebasestorage.app',
-    measurementId: 'G-QER2G3K8YJ',
+    apiKey: 'AIzaSyCEEN8flqW03g8JwQL85AuB-nC1C7x6P7U',
+    appId: '1:841682457265:web:257241a6f10987dd67c890',
+    messagingSenderId: '841682457265',
+    projectId: 'agribot-99dcf',
+    authDomain: 'agribot-99dcf.firebaseapp.com',
+    storageBucket: 'agribot-99dcf.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC5LAJ_hGktcYRNFsp3DGXU-u2F0cF3MvY',
-    appId: '1:799885511523:android:9afb0b34a5ae8f14f8e156',
-    messagingSenderId: '799885511523',
-    projectId: 'greenguardai-45879',
-    storageBucket: 'greenguardai-45879.firebasestorage.app',
+    apiKey: 'AIzaSyA3VMujVAiQGPu2SLVKwOEj1zMRw0b2YWg',
+    appId: '1:841682457265:android:07e26b93cb1c764867c890',
+    messagingSenderId: '841682457265',
+    projectId: 'agribot-99dcf',
+    storageBucket: 'agribot-99dcf.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDAScMpXCs1Q5FJVfTJWkZzDNEUHWhOtgM',
-    appId: '1:799885511523:ios:c1a573d62f0d5d0bf8e156',
-    messagingSenderId: '799885511523',
-    projectId: 'greenguardai-45879',
-    storageBucket: 'greenguardai-45879.firebasestorage.app',
-    iosBundleId: 'com.example.chanakya',
+    apiKey: 'AIzaSyByLhPuhknbSi2n9_-34PJUvupUiBTFNgM',
+    appId: '1:841682457265:ios:7e9f2d04ed8ba91d67c890',
+    messagingSenderId: '841682457265',
+    projectId: 'agribot-99dcf',
+    storageBucket: 'agribot-99dcf.firebasestorage.app',
+    iosClientId: '841682457265-k9vtcqaers1nliqnq22ncffjvht14ob7.apps.googleusercontent.com',
+    iosBundleId: 'com.example.frontend',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDAScMpXCs1Q5FJVfTJWkZzDNEUHWhOtgM',
-    appId: '1:799885511523:ios:c1a573d62f0d5d0bf8e156',
-    messagingSenderId: '799885511523',
-    projectId: 'greenguardai-45879',
-    storageBucket: 'greenguardai-45879.firebasestorage.app',
-    iosBundleId: 'com.example.chanakya',
+    apiKey: 'AIzaSyByLhPuhknbSi2n9_-34PJUvupUiBTFNgM',
+    appId: '1:841682457265:ios:7e9f2d04ed8ba91d67c890',
+    messagingSenderId: '841682457265',
+    projectId: 'agribot-99dcf',
+    storageBucket: 'agribot-99dcf.firebasestorage.app',
+    iosClientId: '841682457265-k9vtcqaers1nliqnq22ncffjvht14ob7.apps.googleusercontent.com',
+    iosBundleId: 'com.example.frontend',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyA9tjY3CTill6NPO3rDr5JGnx41up2oI88',
-    appId: '1:799885511523:web:8f1301cc3054151ef8e156',
-    messagingSenderId: '799885511523',
-    projectId: 'greenguardai-45879',
-    authDomain: 'greenguardai-45879.firebaseapp.com',
-    storageBucket: 'greenguardai-45879.firebasestorage.app',
-    measurementId: 'G-NJERWGL4L3',
+    apiKey: 'AIzaSyCEEN8flqW03g8JwQL85AuB-nC1C7x6P7U',
+    appId: '1:841682457265:web:11fe650e27c6074867c890',
+    messagingSenderId: '841682457265',
+    projectId: 'agribot-99dcf',
+    authDomain: 'agribot-99dcf.firebaseapp.com',
+    storageBucket: 'agribot-99dcf.firebasestorage.app',
   );
 }

@@ -1,9 +1,11 @@
+import 'package:chanakya/screens/WelcomeScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'login_page.dart';
+import 'firebase_options.dart';
 import 'plant_disease_detection.dart';
 import 'pest_detection.dart';
 import 'recommendations.dart';
@@ -12,12 +14,15 @@ import 'chatbot_page.dart';
 import 'SplashScreen.dart';
 import 'home.dart';
 
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  print('Background message received: ${message.notification?.title}, ${message.notification?.body}');
-}
+// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+//   print('Background message received: ${message.notification?.title}, ${message.notification?.body}');
+// }
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -41,25 +46,10 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   final PersistentTabController _controller = PersistentTabController(initialIndex: 0);
 
   late AnimationController _animationController;
-  late Animation<double> _opacityAnimation;
-
-  // Check for login status
-  Future<void> _checkLoginStatus() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
-    if (!isLoggedIn) {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => LoginPage()),
-      );
-    }
-  }
 
   @override
   void initState() {
     super.initState();
-
-    _checkLoginStatus(); // Check login status when the page is opened
 
     // // Subscribe to the plant_alert topic
     // FirebaseMessaging.instance.subscribeToTopic("plant_alert");
@@ -90,7 +80,6 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
     //     );
     //   }
     // });
-
   }
 
   @override
@@ -174,7 +163,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
 
   List<Widget> _buildScreens() {
     return [
-      HomeScreen(controller: _controller),
+      HomeScreen(controller: _controller, maincontext: context),
       ChatbotPage(),
       PestDetection(),
       Recommendations(),

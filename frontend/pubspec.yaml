@@ -44,7 +44,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^3.8.1
   firebase_messaging: ^15.1.6
+  firebase_auth: ^5.5.2
   url_launcher: ^6.3.1
+  google_sign_in: ^6.3.0
 
 dev_dependencies:
   flutter_test:
@@ -76,7 +78,7 @@ flutter:
           - asset: assets/fonts/Poppins-Bold.ttf
             weight: 700
   assets:
-    - assets/logo.png
+    - assets/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

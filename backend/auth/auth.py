@@ -15,8 +15,6 @@ def authenticate_user():
 
         if data.get('method') == "signup":
             phone = data.get('phone')
-        if users_collection.where("email", "==", email).stream():
-            return jsonify({"error": "User already exists"}), 400
 
         decoded_token = auth.verify_id_token(id_token)
         uid = decoded_token['uid']
@@ -25,13 +23,18 @@ def authenticate_user():
         if(method == "signup"):
             user_ref.set({
                 'phone': phone,
+                'email': email,
+                'method': method,
+                'uid': uid,
+                'name': name
             })
-        user_ref.set({
-            'email': email,
-            'method': method,
-            'uid': uid,
-            'name': name
-        })
+        else:
+            user_ref.set({
+                'email': email,
+                'method': method,
+                'uid': uid,
+                'name': name
+            })
 
         return jsonify({"message": "User authenticated", "uid": uid}), 200
 

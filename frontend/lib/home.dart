@@ -1,8 +1,9 @@
 import 'package:chanakya/chatbot_page.dart';
-import 'package:chanakya/login_page.dart';
 import 'package:chanakya/pest_detection.dart';
 import 'package:chanakya/plant_disease_detection.dart';
-import 'package:chanakya/soil_health.dart';
+import 'package:chanakya/screens/WelcomeScreen.dart';
+import 'package:chanakya/utils/api/auth_api.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,7 +14,8 @@ import 'irrigation.dart';
 
 class HomeScreen extends StatefulWidget {
   final PersistentTabController controller; // Add this line
-  const HomeScreen({Key? key, required this.controller}) : super(key: key);
+  final BuildContext maincontext;
+  const HomeScreen({Key? key, required this.controller, required this.maincontext}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -26,9 +28,30 @@ class _HomeScreenState extends State<HomeScreen> {
     'https://akm-img-a-in.tosshub.com/indiatoday/images/story/202202/Budget-Health-%26-Agriculture-Fe.jpg?size=690:388',
   ];
 
-  final String name = "Vijai";
-  final String phoneNumber = "+91 63XXXXXX20";
-  final String email = "admin@gmail.com";
+  String name = 'Guest';
+  String email = 'No email';
+  String phoneNumber = '+91 6378765620';
+
+
+  final AuthService _authService = AuthService();
+
+  void _signOut(BuildContext context) async {
+    await _authService.signOut()
+        .then((value) => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const WelcomeScreen()), (Route<dynamic> route) => false));
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    final user = FirebaseAuth.instance.currentUser;
+    if (user != null) {
+      setState(() {
+        name = user.displayName ?? 'Guest';
+        email = user.email ?? 'No email';
+        phoneNumber = user.phoneNumber! ;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const SizedBox(height: 16.0),
                   Text(
-                    'Phone Number: $phoneNumber',
+                    'Phone Number: ${phoneNumber ?? '+91 6378765620'}',
                     style: TextStyle(
                       fontSize: 16.0,
                       color: Colors
@@ -124,17 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Expanded(
                         child: ElevatedButton(
                           onPressed: () async {
-                            // Logout functionality
-                            final prefs = await SharedPreferences.getInstance();
-                            await prefs.setBool('isLoggedIn', false);
-                            // remove isLoggedIn key from shared preferences
-                            await prefs.remove('isLoggedIn');
-                            print('Logged out');
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginPage()),
-                            ); // Index for GAI Bot in _navBarItems
+                            _signOut(widget.maincontext);
                           },
                           style: ElevatedButton.styleFrom(
                             padding: const EdgeInsets.symmetric(vertical: 12.0),

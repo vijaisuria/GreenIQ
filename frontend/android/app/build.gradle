@@ -69,4 +69,9 @@ flutter {
 }
 
 dependencies {
-    }
+    implementation 'com.google.firebase:firebase-bom:33.11.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'
+    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+    implementation 'androidx.core:core:1.15.0'
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+}
